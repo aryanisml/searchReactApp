@@ -3,7 +3,8 @@ import axios from "axios";
 import API_KEY from "../config";
 import {useStateValue} from  '../Context/SearchContext';
 const useSearch = (searchQuery) => {
-  const [newState, dispatch] = useStateValue();
+  const [{newstate}, dispatch] = useStateValue();
+  console.warn(newstate);
   useEffect(() => {
     const getMovie = async () => {
      await axios.get(
@@ -15,7 +16,7 @@ const useSearch = (searchQuery) => {
     
     };
     getMovie();
-  }, [searchQuery]);
+  }, [searchQuery, dispatch]);
 };
 
 export default useSearch;
