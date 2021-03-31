@@ -8,7 +8,7 @@ const useSearch = (searchQuery) => {
   useEffect(() => {
     const getMovie = async () => {
      await axios.get(
-        `http://www.omdbapi.com/?s=${searchQuery}&apikey=${API_KEY}`
+        `https://www.omdbapi.com/?s=${searchQuery}&apikey=${API_KEY}`
       ).then((result)=> {
         const resultMovie = result.data.Search;
         dispatch({type : 'SEARCH_PRODUCTS', payload: resultMovie});
