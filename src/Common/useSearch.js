@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import API_KEY from "../config";
 import {useStateValue} from  '../Context/SearchContext';
