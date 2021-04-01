@@ -3,13 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { SearchContextProvider } from "./Context/SearchContext";
-import searchReducer, { initialState } from "./Context/SearchReducer";
+
 ReactDOM.render(
   <React.StrictMode>
-    <SearchContextProvider initialState={initialState} reducer={searchReducer}>
       <App />
-    </SearchContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
