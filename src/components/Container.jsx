@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import SearchResult from "./SearchResults";
