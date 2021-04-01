@@ -3,6 +3,7 @@ import { useStateValue } from "../Context/SearchContext";
 import styled from "styled-components";
 const SearchBox = () => {
   const [newstate, dispatch] = useStateValue();
+  console.log(newstate);
   const [searchText, setSearchText] = useState("India");
   const searchHandler = (e) => {
     e.preventDefault();
