@@ -1,7 +1,7 @@
 import { useStateValue } from "../Context/SearchContext";
 import styled from "styled-components";
 const FilterBox = ({ onTextChange, handlerClick }) => {
-  const [newstate, dispatch] = useStateValue();
+  const [newstate] = useStateValue();
   const yearItem = newstate.items;
   return (
     <>

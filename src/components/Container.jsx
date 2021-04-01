@@ -6,7 +6,7 @@ import { useStateValue } from "../Context/SearchContext";
 import useSearch from "../Common/useSearch";
 import FilterBox from "./FilterBox";
 const Container = () => {
-  const [newstate, dispatch] = useStateValue();
+  const [newstate] = useStateValue();
   useSearch(newstate.searchText);
   const [movieList, setMovieList] = useState([]);
   let filterMovieList = [...movieList];
@@ -54,13 +54,3 @@ const Container = () => {
 };
 
 export default Container;
-
-const SearchContainer = styled.div`
-  margin-top: 2px;
-  display: flex;
-  width: 60%;
-`;
-const SearchContainerBox = styled.div`
-  display: flex;
-  flex: 0 0 100%;
-`;
