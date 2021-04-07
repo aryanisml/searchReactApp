@@ -54,11 +54,6 @@ const CardContainer = styled.div`
   padding: 15px;
 `;
 
-const CardTitle = styled.span`
-  color: var(--clr-primary);
-  font-size: 1rem;
-  font-weight: bold;
-`;
 
 const CardContent = styled.div`
   font-size: 12px;
