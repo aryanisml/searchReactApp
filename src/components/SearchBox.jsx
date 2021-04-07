@@ -7,12 +7,12 @@ const SearchBox = () => {
   const [searchText, setSearchText] = useState("India");
   const searchHandler = (e) => {
     e.preventDefault();
-    dispatch({ type: `SET_SEARCH_TEXT`, payload: searchText });
+    dispatch({ type: `SET_SEARCH_TEXT`, payload: searchText ? searchText  : 'India'});
   };
   const keyPressHandler = (e) => {
     if(e && e.code === 'Enter'){
       e.preventDefault();
-      dispatch({ type: `SET_SEARCH_TEXT`, payload: searchText });  
+      dispatch({ type: `SET_SEARCH_TEXT`, payload: searchText ? searchText  : 'India' });  
     }
   }
   return (
@@ -41,12 +41,14 @@ const SearchContainer = styled.div`
   width:50%;
   margin:auto;
 
+
 `;
 const SearchContainerBox = styled.div`
   display:flex;
   flex:0 0 100%;
   border:1px solid gray;
   border-radius:20px;
+  background:white;
   input {
     margin-left:0.5rem;
     flex-grow:1;

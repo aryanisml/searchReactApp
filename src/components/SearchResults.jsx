@@ -32,16 +32,23 @@ const Card = styled.div`
     min-height: 250px;
     height: 250px;
     object-fit: cover;
+    backface-visibility: hidden;
+    opacity: 1;
   }
 
   flex: 0 1 15%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  
+  cursor:pointer;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
   :hover {
-    z-index:1;
+    transform: translateY(-5px) scale(1.1) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+      0 24px 46px var(--box-shadow-color);
   }
+
 `;
 const CardContainer = styled.div`
   display: flex;
@@ -50,8 +57,10 @@ const CardContainer = styled.div`
   justify-content: flex-start;
   margin: 0px;
   box-sizing: border-box;
-  gap: 15px;
-  padding: 15px;
+   gap: 5px;
+  margin-left:5px;
+  padding :5px;
+  
 `;
 
 
@@ -59,4 +68,11 @@ const CardContent = styled.div`
   font-size: 12px;
   font-weight: 600;
   padding:8px;
+  transition: .5s ease;
+  opacity: 1;
+  :hover {
+   // opacity: 1;
+    top:20px;
+    z-index:1000;
+  }
 `;

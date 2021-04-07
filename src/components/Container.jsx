@@ -59,4 +59,6 @@ export default Container;
 
 const ResultContainer = styled.div`
   display: flex;
+  padding:15px;
+  box-sizing:border-box;
 `;
