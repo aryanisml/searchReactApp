@@ -4,6 +4,7 @@ import SearchResult from "./SearchResults";
 import { useStateValue } from "../Context/SearchContext";
 import useSearch from "../Common/useSearch";
 import FilterBox from "./FilterBox";
+import styled from "styled-components";
 const Container = () => {
   const [newstate] = useStateValue();
   useSearch(newstate.searchText);
@@ -32,24 +33,30 @@ const Container = () => {
   const onTextChange = (val) => {
     setFilterMovie(val);
   };
-    const handlerClick = index => () => {
-      const p = filterCollectionMovie.indexOf(index);
-      const all  = [...filterCollectionMovie];
-      if (p === -1) {
-        all.push(index);
-      } else {
-        all.splice(p, 1);
-      }
-      setFilterCollectionMovie(all);
+  const handlerClick = (index) => () => {
+    const p = filterCollectionMovie.indexOf(index);
+    const all = [...filterCollectionMovie];
+    if (p === -1) {
+      all.push(index);
+    } else {
+      all.splice(p, 1);
+    }
+    setFilterCollectionMovie(all);
   };
 
   return (
     <>
       <SearchBox />
-      <FilterBox onTextChange={onTextChange} handlerClick={handlerClick} />
-      <SearchResult list={filterMovieList} />
+      <ResultContainer>
+        <FilterBox onTextChange={onTextChange} handlerClick={handlerClick} />
+        <SearchResult list={filterMovieList} />
+      </ResultContainer>
     </>
   );
 };
 
 export default Container;
+
+const ResultContainer = styled.div`
+  display: flex;
+`;

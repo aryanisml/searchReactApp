@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header>
-        <h1>Search Movie</h1>
+        <span>Search Movie</span>
       </Header>
       <SearchContextProvider
         initialState={initialState}
@@ -24,6 +24,11 @@ export default App;
 
 const Header = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-item: center;
+  background: var(--clr-primary);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  width:100%;
 `;
